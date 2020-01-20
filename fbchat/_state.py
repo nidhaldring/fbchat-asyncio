@@ -192,6 +192,8 @@ class State:
         if fb_dtsg_element:
             fb_dtsg = fb_dtsg_element["value"]
         else:
+            print("Could not find input[name=fb_dtsg] in output:")
+            print(text)
             # Fall back to searching with a regex
             fb_dtsg = FB_DTSG_REGEX.search(text).group(1)
 
